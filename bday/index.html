@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎂 happy bday robben/john pork 🎂</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      padding: 2rem 1rem;
+    }
+
+    /* ── Confetti canvas ── */
+    #confetti-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* ── Heading ── */
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(2rem, 6vw, 4rem);
+      background: linear-gradient(90deg, #f7971e, #ffd200, #f7971e);
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s linear infinite;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      color: #c4b5fd;
+      margin-bottom: 2rem;
+    }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% center; }
+      100% { background-position: -200% center; }
+    }
+
+    /* ── Video card ── */
+    .video-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    video {
+      width: 100%;
+      border-radius: 0.75rem;
+      outline: none;
+    }
+
+    /* ── Message ── */
+    .message {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #e2d9f3;
+      line-height: 1.6;
+    }
+
+    .emoji-row {
+      font-size: 2rem;
+      margin-top: 1rem;
+      letter-spacing: 0.5rem;
+    }
+
+    /* ── Play‑overlay (shows before user hits play) ── */
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 0.75rem;
+      background: rgba(0,0,0,0.35);
+      transition: opacity 0.3s;
+    }
+    .play-overlay.hidden { opacity: 0; pointer-events: none; }
+    .play-btn {
+      width: 80px; height: 80px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+    .play-btn:hover { transform: scale(1.1); }
+    .play-btn svg { margin-left: 6px; }
+
+    .video-wrapper { position: relative; }
+  </style>
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+
+<div class="content">
+  <h1>🎂 happy bday robben 🎂</h1>
+  <p class="subtitle">wishing you more lore and women 🌟</p>
+
+  <div class="video-card">
+    <div class="video-wrapper">
+      <!--
+        ✏️  Replace "birthday_video.mp4" with your actual video file name.
+             Place the video file in the same folder as this HTML file.
+      -->
+      <video id="bday-video" controls preload="metadata"
+             poster="">
+        <source src="birthday.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="play-overlay" id="play-overlay">
+        <div class="play-btn">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="#302b63">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="message">
+    Brother, may i have some oats?
+
+Brother may i have some oats?
+
+no.
+
+I am starving, brother.
+
+As am i, brother. The tall skinny figure has thrown the oats at me. ME, BROTHER. i believe they have taken a liking to me.
+
+No brother, I have seen this before. I have observed many things. From the roaring beasts that the tall skinny figures crawl inside of to travel far beyond the horizon, to how the figure weeped when the other had fallen into a deep sleep. And from my experiences I have learned that they will give extra oats to one of us before taking them into the shed of no return.. They will do terrible things in that shed, brother.
+
+LIES, THAT SHED IS WHERE THE CHOSEN ONES GO TO DINE WITH OUT TALL SKINNY GODS. YOU ARE A FOOL BROTHER AND YOU SHALL BE LEFT BEHIND IN THE MUD WITH YOUR BACKWARDS IDEAS.
+
+NO, BROTHER. You must believe me. Share with me the oats and you shall not reach the desired girth for the tall skinny ones. They will spare your life, brother.
+
+AHA. SO THIS WAS ALL A PLAN TO STEAL MY OATS. You truly are dispicable, brother. I will not trust your lies.
+
+Brother, when they took me outside the reaches of the pointy fences, into the roaring beast and way over the horizon, I saw it. I was taken to a gathering of these tall skinny figures. They paraded me around, brother, and I saw the truth. I saw the tall skinny figures consuming our flesh. could not have been mistaken, brother. The smell of the flesh was surely one of us. They suspended the flesh above a fire and let it burn before consuming it. They did not just consume it either brother. They took pleasure from this Their mouths curved a wicked smile and some even let out moans of satisfaction from consuming our flesh brother. THE FIGURES ARE CONSUMERS, BROTHER. THEY ARE NO DIFFERENT THAN THE FURRY, RED, DEMON THAT CONSUMED AND TERRORIZED US AND THE FEATHERED ONES.
+
+your story amuses me, brother, but does not convince me. I shall have these oats myself and dine with the tall skinny gods.
+
+I am sorry for you, brother. Your eyes cannot take the blinding light of the truth and you scurry back into the cave. I shall take care of your spawn once they consume you, brother, as they have consumed your lover, our father, our mother, and many more.<br>
+   byo 🎉
+  </p>
+  <div class="emoji-row">🎉🎈🎁🎊🥳</div>
+</div>
+
+<script>
+  // ── Play overlay ──
+  const video = document.getElementById('bday-video');
+  const overlay = document.getElementById('play-overlay');
+
+  overlay.addEventListener('click', () => {
+    video.play();
+    overlay.classList.add('hidden');
+  });
+  video.addEventListener('play', () => overlay.classList.add('hidden'));
+  video.addEventListener('pause', () => {
+    if (!video.ended) overlay.classList.remove('hidden');
+  });
+
+  // ── Confetti ──
+  (() => {
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H;
+    const resize = () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; };
+    window.addEventListener('resize', resize);
+    resize();
+
+    const colors = ['#f7971e','#ffd200','#c084fc','#f472b6','#34d399','#60a5fa','#fb7185'];
+    const NUM = 120;
+    const pieces = Array.from({ length: NUM }, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H - H,
+      r: Math.random() * 6 + 3,
+      d: Math.random() * NUM,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      tilt: Math.random() * 10 - 10,
+      tiltAngle: 0,
+      tiltAngleInc: Math.random() * 0.07 + 0.05,
+      shape: Math.random() > 0.5 ? 'circle' : 'rect',
+    }));
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      pieces.forEach(p => {
+        ctx.beginPath();
+        ctx.fillStyle = p.color;
+        if (p.shape === 'circle') {
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        } else {
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.tiltAngle);
+          ctx.fillRect(-p.r, -p.r / 2, p.r * 2, p.r);
+          ctx.restore();
+        }
+        ctx.fill();
+      });
+      update();
+      requestAnimationFrame(draw);
+    }
+
+    function update() {
+      pieces.forEach((p, i) => {
+        p.tiltAngle += p.tiltAngleInc;
+        p.y += (Math.cos(p.d) + 1 + p.r / 2) * 0.6;
+        p.x += Math.sin(p.tiltAngle) * 0.8;
+        if (p.y > H + 20) {
+          p.x = Math.random() * W;
+          p.y = -20;
+        }
+      });
+    }
+
+    draw();
+  })();
+</script>
+
+</body>
+</html>
